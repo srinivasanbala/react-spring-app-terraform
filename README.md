@@ -1,22 +1,22 @@
 #Created this module to implement small react application on EC2 instances
-terraform Modules :
+**terraform Modules :**
 Terraform-bootstrap
    Used to create S3 bucket and dynamodb table to implement Terraform locking and string the statefiles
 
-aws-vpc:
+**aws-vpc:**
     create the VPC
     1) create the vpc with the cidr modify the variable accordingly
     2) creates public , private and database subnets
     3) created Internet gateway and NAT gateway
     4) enable flowlog and create log groups to store the same (this can enhances to store the logs in S3 buckets)
 
-asg-springweb:
+**asg-springweb:**
 
   create the classic load balancer , Autoscaling group and launch configuration with min 1 and max 2 instances
   Ec2's scaled out/in when CPU load changes
   creates 2 security groups one at Load balancer level and other at ec2 level , for now rules are opened for all but needs restricted based on the project
 
-Implementation Steps:
+**Implementation Steps:**
 
 terraform (linux version copied on this repo , [please unzip it] )
 All the codes are written to work with terraform version 0.9.11 , if you are executing in different operating systems please use accordingly
@@ -26,7 +26,7 @@ cd vpcs/dev/bootstrap/eu-west-1/
 ../../../../terraform init
 ../../../../terraform plan --var-file=variable.tfvars
 ../../../../terraform apply --var-file=variable.tfvars
-VPC:
+**VPC:**
 cd vpcs/dev/vpcs/eu-west-1/
 ../../../../terraform init
 ../../../../terraform plan --var-file=variable.tfvars
@@ -44,9 +44,9 @@ cd stacks/dev/poc/eu-west-1/
 ../../../../terraform init
 ../../../../terraform plan --var-file=variable.tfvars
 ../../../../terraform apply --var-file=variable.tfvars
+**
 
-
-Enhancements :
+Enhancements :**
 
 1 ) We can use Packer to create the immutable image upfron with the application installed , and apply the Launch config versions as part of CI/CD
 
