@@ -1,0 +1,35 @@
+#!/usr/local/bin/groovy
+
+pipeline {
+  agent {
+        node {
+             label 'poc-jenkins-agent'
+        }
+  }
+
+  stages {
+    stage('source code checkout') {
+      steps {
+        git branch: 'master', credentialsId: '', url: 'https://gitlab.com/cloud-devops-assignments/spring-boot-react-example.git'
+      }
+    }
+    stage('Build') {
+      steps {
+        sh "mvn clean package"
+      }
+    }
+    stage('publish') {
+      steps {
+        script {
+            pom = readMavenPom file: "pom.xml";
+            currentBuild.displayName = "# ${BUILD_NUMBER} | react-${pom.version}"
+            nexusArtifactUpload artifacts: [[artifactId: 'react', file: "target/react-and-spring-data-rest.jar" type: 'jar']], credentialsid: '****' groupId: 'caseflow', nexusUrl: 'pocnexus.com/nexus3', nexusVersion: 'nexus3', protocol: 'https', repository: 'poc-devops', version: "${pom.version}"
+        }
+      }
+    }
+    stage('clean') {
+       steps {
+          sh "echo removing workspace"
+          cleanWs()
+       }
+    }

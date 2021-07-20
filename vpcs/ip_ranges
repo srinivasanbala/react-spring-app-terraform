@@ -1,0 +1,31 @@
+EU-west-1 (Ireland)
+
+Prod:  10.69.10.69.240.0/22
+Non-Prod:  10.69.96.0/21  (same has you had before)
+
+EU-central-1 (Frankfurt)   Note the difference in name (eu-w-2)
+
+Prod:  10.70.112.0/22
+Non-Prod:  10.70.32.0/21
+
+US-East-1 (N. Virginia)
+
+Prod:  10.68.240.0/22
+Non-Prod:  removing
+
+US-West-2 ( Oregon)
+
+Prod:  10.70.240.0/22
+Non-Prod:  10.70.176.0/22
+
+AP-se-1 (Singapore)
+
+Prod:  10.71.112.0/22
+Non-Prod: 10.71.58.0/23
+
+AP-se-2 (Sydney)
+
+Prod: 10.71.240.0/22
+Non-Prod: 10.71.186.0/23
+
+
