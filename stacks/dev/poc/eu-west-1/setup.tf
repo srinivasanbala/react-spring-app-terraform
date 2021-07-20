@@ -16,12 +16,3 @@ provider "aws" {
   region = "eu-west-1"
 }
 
-// Example datasource you can use in other clusters to access resources from this plan/state file
-// data "terraform_remote_state" "s3state" {
-//   backend = "s3"
-//   config {
-//     bucket = "pmc-techops-terraform-dev"
-//     key    = ""perf/eu-west-1.tfstate"
-//     region = "eu-west-1"
-//   }
-// }
