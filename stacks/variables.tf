@@ -22,7 +22,6 @@ variable "springweb_prefix" {}
 variable "springweb_prj_prefix" {}
 variable "region" {}
 
-## Pearson IP Ranges ##
 variable "poccidrblocks" {
    default = "0.0.0.0/0" # Change to your IP Range!
 }
