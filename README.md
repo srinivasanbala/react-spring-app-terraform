@@ -44,9 +44,9 @@ cd stacks/dev/poc/eu-west-1/
 ../../../../terraform init
 ../../../../terraform plan --var-file=variable.tfvars
 ../../../../terraform apply --var-file=variable.tfvars
-**
 
-Enhancements :**
+
+**Enhancements :**
 
 1 ) We can use Packer to create the immutable image upfron with the application installed , and apply the Launch config versions as part of CI/CD
 
