@@ -49,6 +49,7 @@ cd stacks/dev/poc/eu-west-1/
 **Enhancements :**
 
 1 ) We can use Packer to create the immutable image upfron with the application installed , and apply the Launch config versions as part of CI/CD
+    promote the images to next environments based on tags
 
 or
 
@@ -57,4 +58,5 @@ or
 or
 3) using Ansible/puppet configuration management tool , and from user data invoke ansible local playbook or puppet agent to communicate with master to apply the desired state
 
+4) terraform execution integrated with CI tools to prevoew and approval process to apply against production environments
 dynamodb can used to store the data instead in memory , but didn't have enough time to modify the code.
